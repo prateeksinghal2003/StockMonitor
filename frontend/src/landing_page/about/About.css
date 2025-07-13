@@ -1,0 +1,35 @@
+.about-heading{
+  color:#80ddff
+}
+
+.dev-image{
+     filter: grayscale(1);
+    transition: 1s;
+
+    animation: scaleImage 5s linear infinite ;
+}
+
+
+@keyframes scaleImage
+{
+  0%
+  {
+    filter: grayscale(0);
+    transform: scale(1);
+  }
+
+
+  50%
+  {
+    transform: scale(1.1);
+    filter: grayscale(0);
+    box-shadow: 3px 3px 10px black;
+  }
+
+  100%
+  {
+    transform: scale(1);
+    filter: grayscale(0);
+  }
+
+}

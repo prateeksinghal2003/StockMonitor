@@ -1,0 +1,62 @@
+.eight {
+    max-width: 65.3333333333%;
+}
+
+.text-right {
+    text-align: right;
+}
+.four {
+    max-width: 30.6666666667%;
+}
+
+.chapter-list.videos {
+    background: #F5F5F7;
+    max-height: 65vh;
+    overflow-y: scroll;
+    padding: 20px;
+    border-radius: 15px;
+}
+.chapter-list.videos .viditem{
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.chapter-list.videos a.selected {
+    color: var(--color-blue);
+}
+.chapter-list .selected {
+    font-weight: 600;
+}
+.noul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.seven {
+    max-width: 56.6666666667%;
+}
+.post p {
+    margin: 0 0 15px 0;
+}
+
+.post iframe {
+    width: 100%;
+    min-height: 450px;
+    margin: 0 0 30px 0;
+    border: 1px solid #eee;
+    box-shadow: 1px 1px 4px #eee;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.video-list-item {
+  cursor: pointer;
+  color: inherit;
+  transition: color 0.2s;
+}
+
+.video-list-item:hover {
+  color: blue;
+}

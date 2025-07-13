@@ -1,0 +1,55 @@
+.homepageheading{
+  margin-left: 1.4rem;
+}
+.intro-icons {
+    margin-bottom: 100px;
+}
+
+.intro-icons .row .columns {
+    padding: 10px;
+    margin: 10px ;
+    margin-left: 1.6rem;
+}
+
+.three {
+    max-width: 15%;
+}
+
+.intro-icons strong {
+    margin: 20px -15px -15px;
+    display: block;
+    background: #fff;
+    padding: 15px;
+    box-shadow: 2px 4px 8px #ddd;
+    border-radius: 0 0 10px 10px;
+    color: #222;
+}
+
+.intro-icons .item {
+    display: block;
+    position: relative;
+    border-radius: 10px;
+    padding: 20px 15px 0;
+    transition: ease-in-out 200ms;
+    font-size: 1.2rem;
+    min-width: 190px;
+}    
+.intro-icons .item:hover {
+  transform: translateY(-10px); /* moves up 5px */
+}
+
+a {
+    text-decoration: none;
+    color: #1669c9;
+}
+
+.intro-icons span {
+    display: block;
+    min-height: 80px;
+    
+}
+
+.intro-icons img {
+   
+    bottom: 72px;
+}

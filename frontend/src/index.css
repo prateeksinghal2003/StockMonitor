@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  overflow-x: hidden;
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.nav-link{
+  margin-left: 40px;
+    font-weight: 500;
+}
+
+
+.nav-link:hover {
+  color: blue !important;
+}
+
+
+
+#supportHero{
+  background-color: rgb(56, 126, 209);
+  color: white;
+}
+
+#supportHero a{
+  color: white;
+}
+
+#supportWrapper{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 150px;
+}
+
+#supportHero input{
+  padding: 20px 50px;
+  width: 100%;
+  font-size: 20px;
+  border-radius: 10px;
+  border: none;
+}
+
+
+.link-hover-blue {
+  color: #212529; /* Bootstrap default dark */
+  text-decoration: none;
+}
+
+.link-hover-blue:hover {
+  color: #0d6efd; /* Bootstrap's primary blue */
+}
+
+#search-bar-a-tags{
+    margin-top:1rem ;
+    padding-bottom: 4px;
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    font-size: x-large;
+}
+
+#list-id{
+  margin-top: 1em;
+}
+
+ #input-div{
+  display: flex;
+} 
+
+
+#serach-bar{
+  float: right;
+   
+    position: relative;
+    top: 1.4em;
+    right: 2.5em;
+    opacity: 0.6;
+}
+ 
+.footcol
+{
+   flex-basis: 25%;
+} 
+
+
+
+/* Products---Hero----------------start */
+
+
+/* Products---Hero----------------end */
+
+
+
+
+
+
+/* Home Page css starts */
+
+
+
+
+
+
+
+
+

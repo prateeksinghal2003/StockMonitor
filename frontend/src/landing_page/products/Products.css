@@ -1,0 +1,40 @@
+.intro {
+    min-height: 30vh;
+    margin-bottom : 80px;
+    margin-top: 4rem;
+
+}
+
+.row {
+    box-sizing: border-box ;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.seven {
+    max-width: 56.6666666667%;
+}
+
+.intro .large {
+    margin: 0;
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.intro .subtitle {
+  margin-top: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+}
+
+.five {
+    max-width: 39.3333333333%;
+}
+
+
+
+
+.descript{
+color: #888;
+}
