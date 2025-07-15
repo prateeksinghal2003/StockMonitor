@@ -1,7 +1,6 @@
-import React, { useState,useContext } from "react";
+import React, { useState} from "react";
 
 import { Link } from "react-router-dom";
-import GeneralContext from "./GeneralContext";
 
 // custom css line 105 to 199
 const Menu = () => {
@@ -9,19 +8,12 @@ const Menu = () => {
     //to know which option is sellected
     //0 means first index
   const [selectedMenu, setSelectedMenu] = useState(0);
-  const generalContext = useContext(GeneralContext);
+ 
 
   //hook for profile dropdown
  // const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
 
-  const handleMenuClick = (index) => {
-    setSelectedMenu(index);
-    handleCancelClick();
-  };
-
-  const handleCancelClick = () => {
-   generalContext.closeBuyWindow();
-  };
+ 
 
 
   //toggle the value 
@@ -37,6 +29,29 @@ const Menu = () => {
   return (
     <div className="menu-container">
 
+    {/* process.env.PUBLIC_URL is used in React projects (especially with Create React App) to reference static files in the public folder.
+    It gives the base URL where your app is hosted.
+
+It helps in case your app is not hosted at root (e.g., /my-app instead of /).
+If you're using Create React App and hosting at root (/), then:
+
+js
+Copy
+Edit
+process.env.PUBLIC_URL === ""
+So:
+
+js
+Copy
+Edit
+`${process.env.PUBLIC_URL}/media/images/topbarmenulogo.png`
+becomes:
+
+js
+Copy
+Edit
+"/media/images/topbarmenulogo.png" */}
+
       <img src={`${process.env.PUBLIC_URL}/media/images/topbarmenulogo.png`} style={{ width: "50px", marginBottom: "0.5rem" }}  />
       
       <div className="dashmenus">
@@ -47,7 +62,7 @@ const Menu = () => {
             <Link
                style={{ textDecoration: "none" }}
               to="/dashboard/summary"
-              onClick={() => handleMenuClick(0)}
+             
             >
               <p className={selectedMenu === 0 ? activeMenuClass : menuClass}>
                 Dashboard
@@ -59,7 +74,7 @@ const Menu = () => {
             <Link
               style={{ textDecoration: "none" }}
               to="/dashboard/orders"
-              onClick={() => handleMenuClick(1)}
+            
             >
               <p className={selectedMenu === 1 ? activeMenuClass : menuClass}>
                 Orders
@@ -72,7 +87,7 @@ const Menu = () => {
             <Link
               style={{ textDecoration: "none" }}
               to="/dashboard/holdings"
-              onClick={() => handleMenuClick(2)}
+            
             >
               <p className={selectedMenu === 2 ? activeMenuClass : menuClass}>
                 Holdings
@@ -85,7 +100,7 @@ const Menu = () => {
             <Link
               style={{ textDecoration: "none" }}
               to="/dashboard/positions"
-              onClick={() => handleMenuClick(3)}
+            
             >
               <p className={selectedMenu === 3 ? activeMenuClass : menuClass}>
                 Positions
@@ -98,7 +113,7 @@ const Menu = () => {
             <Link
               style={{ textDecoration: "none" }}
               to="/funds"
-              onClick={() => handleMenuClick(4)}
+             
             >
               <p className={selectedMenu === 4 ? activeMenuClass : menuClass}>
                 Funds
@@ -111,7 +126,7 @@ const Menu = () => {
             <Link
               style={{ textDecoration: "none" }}
               to="/apps"
-              onClick={() => handleMenuClick(6)}
+          
             >
               <p className={selectedMenu === 6 ? activeMenuClass : menuClass}>
                 Apps

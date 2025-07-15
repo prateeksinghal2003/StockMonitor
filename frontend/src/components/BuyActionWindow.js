@@ -31,10 +31,18 @@ const generalContext = useContext(GeneralContext);
   return (
     <div>
       
-       <div className="buycontainer" id="buy-window" draggable="true">
+       <div className="buycontainer" id="buy-window">
+
       <div className="regular-order">
+
         <div className="inputs">
-          <fieldset>
+
+      {/* It’s like a box that groups related form elements.
+     It usually has a border around it.
+🏷️   What is <legend>?
+     It’s the title of that box.
+     It tells what the inputs inside the box are about. */}
+          <fieldset id="firstfield">
             <legend>Qty.</legend>
             <input
               type="number"
@@ -44,37 +52,43 @@ const generalContext = useContext(GeneralContext);
               value={stockQuantity}
             />
           </fieldset>
+
           <fieldset>
-            <legend>Price</legend>
+           <legend style={{ color: "black" }}>Price</legend>
             <input
               type="number"
               name="price"
               id="price"
-              step="0.05"
+              step="100"
               onChange={(e) => setStockPrice(e.target.value)}
               value={stockPrice}
             />
           </fieldset>
+
         </div>
       </div>
 
+
       <div className="buttons">
+
         <span>Margin required ₹140.65</span>
+
         <div>
-          <Link className="btn btn-blue" onClick={handleBuyClick}>
+
+          <Link className="buywindbtn buybtn-blue" onClick={handleBuyClick}>
             Buy
           </Link>
 
-          {/* <Link to="" className="btn btn-grey" onClick={handleCancelClick}>
-            Cancel
-          </Link> */}
-          <button className="btn btn-grey" onClick={handleCancelClick}>
+          <button className="buywindbtn canbtn-grey" onClick={handleCancelClick}>
                 Cancel
           </button>
 
         </div>
+
       </div>
+
     </div>
+
     </div>
  
   );

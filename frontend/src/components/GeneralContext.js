@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from "react";
 
 import BuyActionWindow from "./BuyActionWindow";
-import {useNavigate}  from "react-router-dom"
+
 import Home2 from "./Home2";
 
 //React.createContext() defines what values (state/functions) will be shared.
@@ -11,15 +11,14 @@ import Home2 from "./Home2";
 const GeneralContext = React.createContext({
   openBuyWindow: (uid) => {},
   closeBuyWindow: () => {},
-  stockname :"",
+ 
 });
 
 export const GeneralContextProvider = (props) => {
   const [isBuyWindowOpen, setIsBuyWindowOpen] = useState(false);
   const [selectedStockUID, setSelectedStockUID] = useState("");
 
-  const navigate=useNavigate();
-
+ 
   const handleOpenBuyWindow = (uid) => {
     setIsBuyWindowOpen(true);
     setSelectedStockUID(uid);
@@ -29,17 +28,13 @@ export const GeneralContextProvider = (props) => {
     setIsBuyWindowOpen(false);
     setSelectedStockUID("");
   };
-//  useEffect(() => {
-//     if (isBuyWindowOpen) {
-//       navigate("dashboard/buywindow");
-//     }
-//   }, [isBuyWindowOpen, navigate]);
+
   return (
     <GeneralContext.Provider
       value={{
         openBuyWindow: handleOpenBuyWindow,
         closeBuyWindow: handleCloseBuyWindow,
-        stockname :selectedStockUID
+      
       }}
     >
     

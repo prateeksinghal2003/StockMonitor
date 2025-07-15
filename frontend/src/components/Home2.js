@@ -11,21 +11,7 @@ import { GeneralContextProvider } from "./GeneralContext";
 const Home2 = ({uid}) => {
   return (
     <>
-      {/* <TopBar />
-    <div className="dashboard-container">
-       
-           <WatchList />
     
-     
-   
-         <div className="content">
-       
-        
-          
-         </div>
-   
-   
-       </div> */}
        <BuyActionWindow uid={uid}></BuyActionWindow>
          
      
