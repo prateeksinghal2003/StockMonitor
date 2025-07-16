@@ -1,6 +1,6 @@
 import React, { useState} from "react";
 
-import { Link } from "react-router-dom";
+import { Link,matchPath,useLocation } from "react-router-dom";
 
 // custom css line 105 to 199
 const Menu = () => {
@@ -25,6 +25,11 @@ const Menu = () => {
    //highlight the current option
   const menuClass = "dashmenu";
   const activeMenuClass = "dashmenuselected";
+  const location=useLocation();
+  const matchRoute = (route) => 
+  {
+    return matchPath({ path: route }, location.pathname)
+  }
 
   return (
     <div className="menu-container">
@@ -64,7 +69,7 @@ Edit
               to="/dashboard/summary"
              
             >
-              <p className={selectedMenu === 0 ? activeMenuClass : menuClass}>
+              <p className={matchRoute("/dashboard/summary")? activeMenuClass : menuClass}>
                 Dashboard
               </p>
             </Link>
@@ -74,9 +79,10 @@ Edit
             <Link
               style={{ textDecoration: "none" }}
               to="/dashboard/orders"
+              
             
             >
-              <p className={selectedMenu === 1 ? activeMenuClass : menuClass}>
+              <p className={  matchRoute("/dashboard/orders") ? activeMenuClass : menuClass}>
                 Orders
               </p>
             </Link>
@@ -89,7 +95,7 @@ Edit
               to="/dashboard/holdings"
             
             >
-              <p className={selectedMenu === 2 ? activeMenuClass : menuClass}>
+              <p className={matchRoute("/dashboard/holdings") ? activeMenuClass : menuClass}>
                 Holdings
               </p>
             </Link>
@@ -102,7 +108,7 @@ Edit
               to="/dashboard/positions"
             
             >
-              <p className={selectedMenu === 3 ? activeMenuClass : menuClass}>
+              <p className={matchRoute("/dashboard/positions") ? activeMenuClass : menuClass}>
                 Positions
               </p>
             </Link>
@@ -112,10 +118,10 @@ Edit
           <li>
             <Link
               style={{ textDecoration: "none" }}
-              to="/funds"
+              to="/dashboard/funds"
              
             >
-              <p className={selectedMenu === 4 ? activeMenuClass : menuClass}>
+              <p className={matchRoute("/dashboard/funds") ? activeMenuClass : menuClass}>
                 Funds
               </p>
             </Link>
@@ -125,10 +131,10 @@ Edit
           <li>
             <Link
               style={{ textDecoration: "none" }}
-              to="/apps"
+              to="/dashboard/summary"
           
             >
-              <p className={selectedMenu === 6 ? activeMenuClass : menuClass}>
+              <p className={matchRoute("/dashboard/apps") ? activeMenuClass : menuClass}>
                 Apps
               </p>
             </Link>

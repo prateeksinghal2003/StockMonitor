@@ -298,16 +298,7 @@ cursor: move (shows a drag/move icon — useful for drag-and-drop UI)
   cursor: move;
 }
 
-/* TODO */
-/* .list li::before {
-  content: "";
-  background: transparent;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-} */
+
 
 
 
@@ -340,29 +331,7 @@ Prevents them from sticking together. */
   margin-right: 8px;
 }
 
-/* Targets the 1st span (e.g., stock name)
 
-color: gray
-
-flex: 1 → takes up minimal width compared to others */
-
-/* .watchlistitem-info span:nth-child(1) {
-  color: rgb(141, 141, 141);
-  flex: 1;
-} */
-
-
-/* 
-.watchlistitem-info span:nth-child(2) {
-  color: rgb(223, 73, 73);
-  margin-right: 12px;
-  flex: 2;
-}
-
-.watchlistitem-info span:nth-child(3) {
-  color: rgb(223, 73, 73);
-  flex: 1;
-} */
 
 
 .down {
@@ -430,44 +399,26 @@ flex: 1 → takes up minimal width compared to others */
 
 
 
-
-.logo {
-  width: 30px;
-  height: 2px;
+/* ------------------------Orders css */
+.title {
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: rgb(71, 71, 71);
+  margin-bottom: 2%;
 }
 
 
 
-.funds {
-  width: 100%;
-  text-align: right;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
 
-.funds p {
-  font-size: 0.8rem;
-  color: rgb(179, 179, 179);
-  margin-right: 8px;
-}
 
-.btn {
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 2px;
-  color: #fff;
-  margin-right: 2px;
-  margin-left: 2px;
-}
 
-.btn-green {
-  background: #4caf50;
-}
 
-.btn-blue {
-  background: #4184f3;
-}
+
+
+
+
+
+
 
 .row {
   width: 100%;
@@ -477,95 +428,18 @@ flex: 1 → takes up minimal width compared to others */
   margin-top: 5%;
 }
 
-.col {
-  flex-basis: 48%;
-  text-align: left;
-}
 
-.col span {
-  display: flex;
-  align-items: center;
-  margin-bottom: 2%;
-}
 
-.section-icon {
-  transform: scale(0.8);
-  color: rgb(66, 56, 56);
-  padding: 0;
-  margin: 0;
-  margin-right: 10px;
-}
-
-.col span p {
-  display: inline-block;
-  font-size: 1.2rem;
-  font-weight: 300;
-}
 
 .table {
   border: 1px solid #ddd;
   padding: 5% 8%;
 }
 
-.table .data {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.table .data > * {
-  margin-bottom: 5%;
-}
-
-.table .data p:first-child {
-  font-size: 1rem;
-  color: rgb(151, 151, 151);
-}
-
-.imp {
-  font-size: 1.5rem;
-  color: #313131;
-}
-
-.colored {
-  color: #4184f3;
-}
-
-.table hr {
-  border: none;
-  background: #d1d1d1;
-  height: 0.5px;
-  margin-bottom: 5%;
-}
-
-.commodity {
-  padding: 2% 8%;
-  text-align: center;
-}
-
-.commodity p {
-  margin-bottom: 10%;
-  color: #c9c9c9;
-}
-
-/* sudo selectors */
-.btn-blue:hover {
-  background: #74a7fa;
-}
-
-.btn-green:hover {
-  background: #7bdd7f;
-}
-
-.title {
-  font-size: 1.3rem;
-  font-weight: 300;
-  color: rgb(71, 71, 71);
-  margin-bottom: 2%;
-}
 
 .order-table table {
   width: 100%;
+  /* This is a CSS property used with HTML tables to remove space between borders of table cells. */
   border-collapse: collapse;
 }
 
@@ -587,14 +461,28 @@ flex: 1 → takes up minimal width compared to others */
   text-align: left;
 }
 
-.order-table tr th:nth-child(1),
-.order-table tr th:nth-child(4) {
-  border-right: 1px solid #f1f1f1;
+.order-table tr th:nth-child(7).profit {
+  color: rgb(72, 194, 55);
+
 }
 
-.order-table tr td:nth-child(1),
-.order-table tr td:nth-child(4) {
-  border-right: 1px solid #f1f1f1;
+.order-table tr th:nth-child(7).loss {
+   color: rgb(250, 118, 78);
+}
+
+.order-table tr th:nth-child(8).profit {
+  color: rgb(72, 194, 55);
+
+}
+
+.order-table tr th:nth-child(8).loss {
+  color: rgb(250, 118, 78);
+}
+
+
+
+.order-table tr td{
+  border-right: 1px solid black;
 }
 
 .order-table tr td:last-child {
@@ -620,6 +508,136 @@ flex: 1 → takes up minimal width compared to others */
 .order-table td.loss {
   color: rgb(250, 118, 78);
 }
+
+
+.order-table tr td:first-child p {
+    background: rgb(255, 197, 197);
+    color: rgb(233, 120, 120);
+    width: 50%;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.order-table tr td:last-child {
+  font-size: 1rem;
+}
+
+
+
+
+.table .data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.table .data > * {
+  margin-bottom: 5%;
+}
+
+.table .data p:first-child {
+  font-size: 1rem;
+  color: rgb(151, 151, 151);
+}
+
+.table hr {
+  border: none;
+  background: #d1d1d1;
+  height: 0.5px;
+  margin-bottom: 5%;
+}
+
+
+
+
+
+
+.align-left {
+  text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+.funds {
+  width: 100%;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.funds p {
+  font-size: 0.8rem;
+  color: rgb(179, 179, 179);
+  margin-right: 8px;
+}
+.col {
+  flex-basis: 48%;
+  text-align: left;
+}
+
+.col span {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2%;
+}
+.logo {
+  width: 30px;
+  height: 2px;
+}
+
+.section-icon {
+  transform: scale(0.8);
+  color: rgb(66, 56, 56);
+  padding: 0;
+  margin: 0;
+  margin-right: 10px;
+}
+
+.col span p {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+
+.imp {
+  font-size: 1.5rem;
+  color: #313131;
+}
+
+.colored {
+  color: #4184f3;
+}
+
+
+
+.commodity {
+  padding: 2% 8%;
+  text-align: center;
+}
+
+.commodity p {
+  margin-bottom: 10%;
+  color: #c9c9c9;
+}
+
+/* sudo selectors */
+.btn-blue:hover {
+  background: #74a7fa;
+}
+
+.btn-green:hover {
+  background: #7bdd7f;
+}
+
 
 .row {
   display: flex;
@@ -703,67 +721,6 @@ hr {
   background: rgb(110, 110, 253);
 }
 
-.title {
-  font-size: 1.3rem;
-  font-weight: 300;
-  color: rgb(71, 71, 71);
-  margin-bottom: 2%;
-}
-
-.order-table table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.order-table tr {
-  border-top: 1px solid rgb(211, 211, 211);
-  border-bottom: 1px solid rgb(211, 211, 211);
-}
-
-.order-table th {
-  text-align: right;
-  padding: 15px 10px;
-  color: rgb(145, 145, 145);
-  font-weight: 300;
-  font-size: 0.8rem;
-}
-
-.order-table tr th:first-child,
-.order-table tr td:first-child {
-  text-align: left;
-}
-
-.order-table tr td:first-child p {
-    background: rgb(255, 197, 197);
-    color: rgb(233, 120, 120);
-    width: 50%;
-    text-align: center;
-    border-radius: 2px;
-}
-
-.order-table tr td:last-child {
-  font-size: 0.6rem;
-}
-
-.order-table td {
-  padding: 10px 10px;
-  text-align: right;
-  font-weight: 400;
-  font-size: 0.9rem;
-  color: rgb(73, 73, 73);
-}
-
-.align-left {
-  text-align: left;
-}
-
-.order-table td.profit {
-  color: rgb(72, 194, 55);
-}
-
-.order-table td.loss {
-  color: rgb(250, 118, 78);
-}
 
 .row {
   display: flex;

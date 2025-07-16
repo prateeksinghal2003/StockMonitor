@@ -1,11 +1,30 @@
 import React, { useState,useContext} from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-hot-toast"
+
 
 import axios from "axios";
 
 import GeneralContext from "./GeneralContext";
 
 import "./BuyActionWindow.css";
+
+
+// axios.post(...) – sends a POST request.
+
+// URL: http://localhost:3001/newOrder – the backend endpoint.
+
+// Payload:
+
+// name: likely the user ID (uid).
+
+// qty: quantity of stock to buy.
+
+// price: price per stock.
+
+// mode: "BUY" – indicates this is a buy order.
+
+// Purpose: It likely creates a new stock buy order on the server.
 
 const BuyActionWindow = ({uid}) => {
   const [stockQuantity, setStockQuantity] = useState(1);
@@ -20,9 +39,15 @@ const generalContext = useContext(GeneralContext);
       qty: stockQuantity,
       price: stockPrice,
       mode: "BUY",
-    });
+    }).then((res) => {
+ 
+    toast.success(uid + " Stock bought Successfully");
+});
+   // console.log(res);
     generalContext.closeBuyWindow();
   };
+
+  
 
   const handleCancelClick = () => {
    generalContext.closeBuyWindow();

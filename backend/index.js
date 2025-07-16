@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3001;
 const uri = process.env.MONGO_URL;
 
 const app = express();
-
+console.log("Reached here")
  app.use(
 	cors({
 
@@ -23,9 +23,15 @@ const app = express();
 		credentials:true,
 	})
 )
-app.options("*", cors());
+
+console.log("Reached here")
+
+//app.options("/*", cors());
+console.log("Reached here")
+
 app.use(bodyParser.json());
 
+console.log("Reached here")
 app.get("/addHoldings", async (req, res) => {
   let tempHoldings = [
     {
@@ -141,13 +147,14 @@ app.get("/addHoldings", async (req, res) => {
 
 
   //for every item , create a model 
+  console.log("Reached here")
   tempHoldings.forEach((item) => {
     let newHolding = new HoldingsModel({
       name: item.name,
       qty: item.qty,
       avg: item.avg,
       price: item.price,
-      net: item.day,
+      net: item.net,
       day: item.day,
     });
 
@@ -156,6 +163,7 @@ app.get("/addHoldings", async (req, res) => {
   res.send("Done!");
 });
 
+console.log("Reached here")
 app.get("/addPositions", async (req, res) => {
   let tempPositions = [
     {
@@ -197,15 +205,48 @@ app.get("/addPositions", async (req, res) => {
   res.send("Done!");
 });
 
+console.log("Reached here")
 app.get("/allHoldings", async (req, res) => {
   let allHoldings = await HoldingsModel.find({});
   res.json(allHoldings);
 });
 
+console.log("Reached here")
 app.get("/allPositions", async (req, res) => {
   let allPositions = await PositionsModel.find({});
   res.json(allPositions);
 });
+
+
+
+// Route Definition:
+
+// app.post("/newOrder", ...) defines a POST endpoint at /newOrder.
+
+// Request Handling:
+
+// When a client (like your frontend using axios.post(...)) sends a POST request to http://localhost:3001/newOrder, this function runs.
+
+// Data Extraction:
+
+// req.body contains the JSON data sent from the frontend.
+
+// Fields extracted:
+
+// name → order's user ID or stock name.
+
+// qty → quantity.
+
+// price → price per item.
+
+// mode → likely "BUY" or "SELL".
+
+// Mongoose Model Instance:
+
+// new OrdersModel({...}) creates a new Mongoose document (but does not save it yet).
+
+// OrdersModel is a Mongoose model connected to a MongoDB collection, e.g., orders.
+
 
 app.post("/newOrder", async (req, res) => {
   let newOrder = new OrdersModel({
@@ -217,11 +258,17 @@ app.post("/newOrder", async (req, res) => {
 
   newOrder.save();
 
-  res.send("Order saved!");
+  res.send(req.body.name);
+});
+
+app.get("/allOrders", async (req, res) => {
+  let allOrders = await OrdersModel.find({});
+  res.json(allOrders);
 });
 
 
 
+console.log("Reached here")
 app.listen(PORT, () => {
   console.log("App started!");
   mongoose.connect(uri);

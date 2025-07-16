@@ -7,12 +7,16 @@ import BuyActionWindow from "./BuyActionWindow";
 import { Outlet } from "react-router-dom";
 import WatchList from "./WatchList";
 import { GeneralContextProvider } from "./GeneralContext";
+import { GenIcon } from "react-icons/lib";
 
 const Home2 = ({uid}) => {
   return (
     <>
     
-       <BuyActionWindow uid={uid}></BuyActionWindow>
+    
+  <BuyActionWindow uid={uid}></BuyActionWindow>
+    
+     
          
      
     </>
